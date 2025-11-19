@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let numbers = [10, 20, 43, 94, 28, 40, 83, 57, 84, 38];
+        let max = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+
+            if (numbers[i] >= max) {
+                max = numbers[i];
+            }
+        }
+       let sum = 0;
+        for (const num of numbers) {
+            sum += num;
+        }
+        let average = sum / numbers.length;
+        document.write(`Số lớn nhất trong mảng  [${numbers.join(', ')}] là: ${max}
+                        và giá trị trung bình của mảng là: ${average}`);
+    </script>
 </body>
 </html>

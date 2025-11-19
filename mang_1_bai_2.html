@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <h2>Bài 2: Số lớn nhất trong mảng và vị trí của nó</h2>
+    <script>
+        // 1. Khởi tạo mảng số nguyên gồm 10 phần tử
+        // Tạo một mảng 10 phần tử với giá trị ngẫu nhiên từ 1 đến 20 để dễ kiểm tra
+        let numbers = [10, 20, 43, 94, 28, 40, 83, 57, 84, 38];
+        // 2. Thực hiện tính toán và đếm
+        let max = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            // Kiểm tra điều kiện: số nguyên lớn hơn hoặc bằng 10
+            if (numbers[i] >= max) {
+                max = numbers[i];
+            }
+        }
+        // 3. Hiển thị kết quả
+        // Dùng dấu huyền (`) và cú pháp ${...} để chèn biến vào chuỗi
+        document.write(`Số lớn nhất trong mảng  [${numbers.join(', ')}] là: ${max}
+                        và vị trí của nó là thứ ${numbers.length} trong mảng`);
+    </script>
 </body>
 </html>

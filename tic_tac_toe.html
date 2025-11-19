@@ -2,43 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Caro Game 10x10 Đơn Giản</title>
+    <style>
+        body { font-family: 'Courier New', monospace; }
+        #game_status {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        /* Dùng PRE để hiển thị, giúp mã nguồn JS đơn giản hơn nhiều */
+        #caro_game {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        button { padding: 8px 15px; cursor: pointer; }
+    </style>
 </head>
 <body>
-<h1>Cờ caro bản thiếu kinh phí</h1>
-<p id="caro_game"></p>
-<button type ="button" onclick="change_value()">Change Value</button>
+<h1>Cờ caro bản thiếu kinh phí (10x10)</h1>
+<p id="game_status">Lượt chơi: X</p>
+<pre id="caro_game"></pre> <button type ="button" onclick="change_value()">Change Value</button>
 <script>
-    let x = document.getElementById("caro_game");
+    let x_display = document.getElementById("caro_game");
+    let status_display = document.getElementById("game_status");
 
-    let board = [];
-    let data = "";
-    for (let i = 0; i < 5; i++) {
-        board[i] = [0, 0, 0, 0, 0];
-    }
+    // CÁC BIẾN CỐ ĐỊNH
+    const N = 10;
+    const M = 10;
+    const WIN_COUNT = 5;
 
-    for (let i = 0; i < 5; i++) {
-        data += "<br/>";
-        for (let j = 0; j < 5; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;";
+    // CÁC BIẾN TRẠNG THÁI
+    let bang = [];
+    let nguoi_choi = 'x';
+    let gameActive = true;
+    let moveCount = 0;
+
+    function initAndDrawBoard() {
+        for (let i = 0; i < N; i++) {
+            bang[i] = new Array(M).fill(0); // Dùng Array.fill(0) để khởi tạo nhanh hơn
         }
+        drawBoard();
+        updateStatus("Lượt chơi của: X");
     }
-    x.innerHTML = data;
-    function change_value() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        board[positionX][positionY] = "x";
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+
+    // HÀM VẼ BÀN CỜ ĐÃ ĐƯỢC ĐƠN GIẢN HÓA
+    function drawBoard() {
+        // Dùng map và join để tạo chuỗi hiển thị nhanh chóng
+        let output = bang.map(row =>
+            row.join('  ') // Nối các phần tử trong dòng bằng 2 khoảng trắng
+        ).join('\n'); // Nối các dòng bằng ký tự xuống dòng (nhờ thẻ <pre>)
+
+        x_display.textContent = "\n" + output; // Dùng textContent cho <pre>
+    }
+
+    function updateStatus(message) {
+        status_display.innerHTML = message;
+    }
+
+    // ===================================
+    // 2. LOGIC KIỂM TRA THẮNG (GIỮ NGUYÊN)
+    // ===================================
+
+    function checkWin(row, col, player) {
+        const directions = [
+            [0, 1], [1, 0], [1, 1], [1, -1] // Ngang, Dọc, Chéo \ , Chéo /
+        ];
+        for (const [dr, dc] of directions) {
+            let countPositive = countDirection(row, col, dr, dc, player);
+            let countNegative = countDirection(row, col, -dr, -dc, player);
+            if (countPositive + countNegative - 1 >= WIN_COUNT) {
+                return true;
             }
         }
-        data += "<br/><br/>"
-        x.innerHTML = "<hr/>" + data;
+        return false;
     }
 
+    function countDirection(r, c, dr, dc, player) {
+        let count = 0;
+        for (let i = 0; i < WIN_COUNT; i++) {
+            let nextR = r + dr * i;
+            let nextC = c + dc * i;
+            if (nextR >= 0 && nextR < N && nextC >= 0 && nextC < M && bang[nextR][nextC] === player) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
+    // ===================================
+    // 3. XỬ LÝ LƯỢT ĐÁNH CHÍNH
+    // ===================================
+
+    function change_value() {
+        if (!gameActive) {
+            let winner = (nguoi_choi === 'x') ? 'O' : 'X';
+            alert("Trò chơi đã kết thúc! Người chiến thắng là " + winner + ". Vui lòng làm mới trang.");
+            return;
+        }
+
+        // Dùng destructuring để lấy giá trị prompt, đơn giản hóa code
+        let positionX = parseInt(prompt("Lượt " + nguoi_choi.toUpperCase() + ": Nhập Dòng (0-" + (N - 1) + "):"));
+        let positionY = parseInt(prompt("Lượt " + nguoi_choi.toUpperCase() + ": Nhập Cột (0-" + (N - 1) + "):"));
+
+        // Kiểm tra tính hợp lệ
+        if (isNaN(positionX) || isNaN(positionY) || positionX < 0 || positionX >= N || positionY < 0 || positionY >= M) {
+            alert("Vị trí không hợp lệ. Vui lòng nhập số trong khoảng 0 đến " + (N - 1) + ".");
+            return;
+        }
+
+        // Kiểm tra ô đã được đánh chưa
+        if (bang[positionX][positionY] !== 0) {
+            alert("Ô này đã được đánh. Vui lòng chọn ô khác.");
+            return;
+        }
+
+        // Cập nhật giá trị
+        bang[positionX][positionY] = nguoi_choi;
+        drawBoard();
+        moveCount++;
+
+        // KIỂM TRA THẮNG
+        if (checkWin(positionX, positionY, nguoi_choi)) {
+            updateStatus("🎉 **CHÚC MỪNG!** Người chơi **" + nguoi_choi.toUpperCase() + "** đã thắng!");
+            gameActive = false;
+            return;
+        }
+
+        // KIỂM TRA HÒA
+        if (moveCount === N * M) {
+            updateStatus("🤝 **Hòa!** Bàn cờ đã đầy.");
+            gameActive = false;
+            return;
+        }
+
+        // Chuyển lượt chơi
+        nguoi_choi = (nguoi_choi === 'x') ? 'o' : 'x';
+        updateStatus("Lượt chơi của: " + nguoi_choi.toUpperCase());
+    }
+
+    // Khởi động trò chơi khi tải trang
+    initAndDrawBoard();
 </script>
 </body>
 </html>
