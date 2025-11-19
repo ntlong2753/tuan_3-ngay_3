@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let engwords = [
+            "hello",
+            "world",
+            "computer",
+            "program",
+            "array"
+        ];
+        let viwords = [
+            "xin chào",
+            "thế giới",
+            "máy tính",
+            "chương trình",
+            "mảng"
+        ];
+        let ket_qua = "Không tìm thấy nghĩa trong từ điển.";
+        let tra_tu = prompt('Nhập trừ cần tra');
+        for( let i = 0; i < tra_tu.length; i++ ) {
+            if(engwords[i] === tra_tu){
+                ket_qua = viwords[i];
+            }
+        }
+        document.write(tra_tu + ": " + ket_qua);
+    </script>
+</body>
+</html>
