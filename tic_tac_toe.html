@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cờ caro bản thiếu kinh phí</h1>
+<p id="caro_game"></p>
+<button type ="button" onclick="change_value()">Change Value</button>
+<script>
+    let x = document.getElementById("caro_game");
+
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = [0, 0, 0, 0, 0];
+    }
+
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    x.innerHTML = data;
+    function change_value() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/>"
+        x.innerHTML = "<hr/>" + data;
+    }
+
+</script>
+</body>
+</html>

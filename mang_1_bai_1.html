@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài 1: Đếm số nguyên lớn hơn hoặc bằng 10</h2>
+<p id="array_display"></p>
+<p id="result"></p>
+
+<script>
+    // 1. Khởi tạo mảng số nguyên gồm 10 phần tử
+    // Tạo một mảng 10 phần tử với giá trị ngẫu nhiên từ 1 đến 20 để dễ kiểm tra
+    const N = 10;
+    let numbers = [];
+
+    for (let i = 0; i < N; i++) {
+        // Tạo số ngẫu nhiên từ 1 đến 20
+        /*
+        Math.random (); Hàm này Hàm này tạo ra một số thập phân ngẫu nhiên R nằm trong khoảng từ 0 (bao gồm 0) đến 1 (không bao gồm 1).
+        Khi nhân với 20, phạm vi của số ngẫu nhiên trở thành: 0 <= R < 20. (Tức là từ 0 đến 19.999...).
+        Math.floor(...): Hàm này loại bỏ phần thập phân, làm tròn số xuống số nguyên gần nhất. Phạm vi của số nguyên lúc
+        này là: $0, 1, 2, ..., 19. "+ 1": Vì đề bài yêu cầu số nguyên ngẫu nhiên không bao gồm 0và kết thúc ở 20, chúng ta
+        cần dịch chuyển toàn bộ phạm vi lên 1 đơn vị. Khi cộng 1, phạm vi cuối cùng trở thành: 1, 2, 3, ..., 20.
+        */
+        numbers.push(Math.floor(Math.random() * 20) + 1);
+    }
+    // Hiển thị mảng đã tạo
+    document.getElementById("array_display").textContent = "Mảng số nguyên: [" + numbers.join(", ") + "]";
+
+    // 2. Thực hiện tính toán và đếm
+    let count = 0;
+
+    for (let i = 0; i < numbers.length; i++) {
+        // Kiểm tra điều kiện: số nguyên lớn hơn hoặc bằng 10
+        if (numbers[i] >= 10) {
+            count++;
+        }
+    }
+
+    // 3. Hiển thị kết quả
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = "Số lượng số nguyên lớn hơn hoặc bằng 10 là: " + count;
+
+</script>
+</body>
+</html>
