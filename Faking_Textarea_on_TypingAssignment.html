@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Type anything slowly</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 24px; }
+        h1 { margin-bottom: 8px; }
+        p { color: #555; }
+        textarea {
+            width: 100%;
+            height: 160px;
+            font-size: 16px;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+        .hint { margin-top: 8px; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+<p>Type anything slowly</p>
+
+<label for="typeBox"></label><textarea id="typeBox" placeholder="Gõ bất kỳ..."></textarea>
+<div class="hint">Faking Textarea on TypingAssignment</div>
+
+<script>
+    // Câu cố định cần hiện ra dần
+    const FIXED_TEXT = "abcd";
+
+    // Tham chiếu tới textarea
+    const box = document.getElementById('typeBox');
+
+    // Vị trí ký tự tiếp theo sẽ xuất hiện
+    let index = 0;
+
+    // Hàm cập nhật nội dung theo số ký tự người dùng đã tạo/loại
+    function updateDisplay() {
+        // Lấy độ dài hiện tại người dùng đang có trong box
+        // nhưng ta không tin vào nội dung, chỉ dùng độ dài để quyết định index
+        const len = box.value.length;
+
+        // Cập nhật index dựa trên độ dài đó (giới hạn trong [0, FIXED_TEXT.length])
+        index = Math.max(0, Math.min(len, FIXED_TEXT.length));
+
+        // Hiển thị chuỗi cố định theo số ký tự index
+        box.value = FIXED_TEXT.slice(0, index);
+    }
+
+    // Ngăn người dùng dán (paste) để tránh nhảy nhanh
+    box.addEventListener('paste', (e) => {
+        e.preventDefault();
+    });
+
+    // Lắng nghe khi người dùng gõ (input gồm cả gõ, xóa, kéo thả)
+    box.addEventListener('input', updateDisplay);
+
+    // Tùy chọn: khi đạt cuối chuỗi, không cho gõ thêm
+    box.addEventListener('beforeinput', (e) => {
+        const isInsert =
+            e.inputType.startsWith('insert') || e.inputType === 'insertFromPaste';
+        if (isInsert && index >= FIXED_TEXT.length) {
+            e.preventDefault();
+        }
+    });
+
+    // Khởi tạo rỗng
+    box.value = "";
+    index = 0;
+</script>
+</body>
+</html>

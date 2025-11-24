@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964f2900-5754-4190-8cfd-5266e83c3b54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Faking_Textarea_on_TypingAssignment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bat_ky.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mang_2_bai_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/mang_2_bai_3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -24,34 +26,64 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="35fyasa8Ob3j2qoMi5hXZm9udbq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.index.html.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.Faking_Textarea_on_TypingAssignment.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.abc.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.bat_ky.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_2.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_3.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_4.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_5.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_6.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_7.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_1_bai_8.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_2_bai_1.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_2_bai_2.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.mang_2_bai_3.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.tic_tac_toe.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.tu_dien.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JavaScript Debug.bat_ky.html">
+    <configuration name="bat_ky.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="ad48c93a-253c-433b-9771-33fbfadc1413" uri="http://localhost:63342/ngay_3/bat_ky.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="tu_dien.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="ad48c93a-253c-433b-9771-33fbfadc1413" uri="http://localhost:63342/ngay_3/tu_dien.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.bat_ky.html" />
+        <item itemvalue="JavaScript Debug.tu_dien.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28238.10" />
       </set>
     </attachedChunks>
   </component>
@@ -62,7 +94,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763515487054</updated>
-      <workItem from="1763515488162" duration="599000" />
+      <workItem from="1763515488162" duration="19311000" />
+      <workItem from="1763601326135" duration="45000" />
+      <workItem from="1763613179037" duration="94000" />
+      <workItem from="1763687647163" duration="743000" />
+      <workItem from="1763949031115" duration="183000" />
+      <workItem from="1763950539457" duration="56000" />
+      <workItem from="1763950805551" duration="26000" />
+      <workItem from="1763950892859" duration="21000" />
+      <workItem from="1763951379517" duration="29000" />
+      <workItem from="1763951756209" duration="8000" />
+      <workItem from="1763951774583" duration="49000" />
+      <workItem from="1763965758878" duration="135000" />
+      <workItem from="1763966732219" duration="187000" />
+      <workItem from="1763966967384" duration="6000" />
     </task>
     <servers />
   </component>
